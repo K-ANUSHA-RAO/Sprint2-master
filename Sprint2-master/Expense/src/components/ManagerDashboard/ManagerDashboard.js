@@ -11,7 +11,7 @@ class ManagerDashboard extends React.Component {
     render(){
         return(
            
-            <nav className="navbar navbar-expand-sm navbar-light bg-light" >
+            <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
               <div className='container'>
                 <div className="navbar-nav mr-auto">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@ class ManagerDashboard extends React.Component {
                 <ul className="navbar-nav mr-auto">
                 <li className="nav-item active" >
                 <Link to={"/View All List"} className="nav-link dark">
-                View All forms
+                View All List
                   </Link>
                 </li>
                 <li className="nav-item active">

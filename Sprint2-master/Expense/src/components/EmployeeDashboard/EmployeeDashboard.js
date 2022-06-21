@@ -6,10 +6,11 @@ import {
     Link
   } from "react-router-dom";  
 import ReimbursementForm from '../ReimbursementForm/ReimbursementForm';
+import ViewList from '../ViewList/ViewList';
 class EmployeeDashboard extends React.Component {
     render(){
     return(
-        <nav className="navbar navbar-expand-sm navbar-light bg-light">
+        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
           <div className='container'>
             <div className="navbar-nav mr-auto">
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +24,7 @@ class EmployeeDashboard extends React.Component {
               </Link>
             </li>
             <li className="nav-item active">
-              <Link to={"/ViewList"} className="nav-link dark">
+              <Link to={"/View List"} className="nav-link dark">
               View Reimbursement Status 
               </Link>
             </li>
@@ -34,7 +35,7 @@ class EmployeeDashboard extends React.Component {
                 <div className="container mt-3">
           <Switch>
             <Route exact path={"/Reimbursement Form"} component={ReimbursementForm} />
-            <Route exact path={"/Reimbursementstatus"} component={""} />
+            <Route exact path={"/View List"} component={ViewList} />
           </Switch>
         </div>
         </nav>

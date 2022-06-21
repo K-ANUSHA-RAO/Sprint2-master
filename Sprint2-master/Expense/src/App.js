@@ -3,7 +3,6 @@ import './App.css';
 import Header from './components/Header/Header';
 import LoginForm from './components/LoginForm/LoginForm';
 import RegistrationForm from './components/RegistrationForm/RegistrationForm';
-import Home from './components/AboutUs/AboutUs';
 import {
   BrowserRouter as Router,
   Switch,

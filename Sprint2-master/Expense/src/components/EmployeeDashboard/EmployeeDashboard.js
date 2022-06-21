@@ -5,8 +5,6 @@ import {
     Route,
     Link
   } from "react-router-dom";  
-import ReimbursementForm from '../ReimbursementForm/ReimbursementForm';
-import ViewList from '../ViewList/ViewList';
 class EmployeeDashboard extends React.Component {
     render(){
     return(
@@ -18,12 +16,12 @@ class EmployeeDashboard extends React.Component {
             </button>
             <div className="row col-24 d-flex collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
+            <li className="nav-item">
             <Link to={"/Reimbursement Form"} className="nav-link dark">
             Reimbursement Form
               </Link>
             </li>
-            <li className="nav-item active">
+            <li className="nav-item">
               <Link to={"/View List"} className="nav-link dark">
               View Reimbursement Status 
               </Link>
@@ -33,10 +31,6 @@ class EmployeeDashboard extends React.Component {
             </div>
                 </div>
                 <div className="container mt-3">
-          <Switch>
-            <Route exact path={"/Reimbursement Form"} component={ReimbursementForm} />
-            <Route exact path={"/View List"} component={ViewList} />
-          </Switch>
         </div>
         </nav>
     );

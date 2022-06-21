@@ -5,8 +5,6 @@ import {
     Route,
     Link
   } from "react-router-dom";
-import AcceptAndRejectRequests from '../AcceptAndRejectRequests/AcceptAndRejectRequests';
-
 class ManagerDashboard extends React.Component {
     render(){
         return(
@@ -19,12 +17,12 @@ class ManagerDashboard extends React.Component {
                 </button>
                 <div className="row col-24 d-flex collapse navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav mr-auto">
-                <li className="nav-item active" >
+                <li className="nav-item" >
                 <Link to={"/View All List"} className="nav-link dark">
                 View All List
                   </Link>
                 </li>
-                <li className="nav-item active">
+                <li className="nav-item">
                   <Link to={"/Accept And Reject Requests"} className="nav-link dark">
                   Accept And Reject Requests
                   </Link>
@@ -34,10 +32,6 @@ class ManagerDashboard extends React.Component {
                 </div>
                     </div>
                     <div className="container mt-3">
-              <Switch>
-                <Route exact path={"/View All List"} component={"ViewAllList"} />
-                <Route exact path={"/AcceptAndRejectRequests"} component={AcceptAndRejectRequests} />
-              </Switch>
             </div>
             </nav>
         );

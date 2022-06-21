@@ -7,47 +7,66 @@ import Home from './components/Home/Home';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Link
 } from "react-router-dom";  
-import NavigationToAllPages from './components/NavigationToAllPages/NavigationToAllPages';
+//import NavigationToAllPages from './components/NavigationToAllPages/NavigationToAllPages';
 import EmployeeDashboard from './components/EmployeeDashboard/EmployeeDashboard';
 import ReimbursementForm from './components/ReimbursementForm/ReimbursementForm';
 import ManagerDashboard from './components/ManagerDashboard/ManagerDashboard';
-function App() {
-  const [title, updateTitle] = useState(null);
-  const [updateErrorMessage] = useState(null);
-  return (
-    <Router>
-    <div className="App">
-      <Header title={title}/>
-        <div className="container d-flex align-items-center flex-column">
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <nav className="navbar navbar-expand navbar-dark bg-dark">
+          <div className="navbar-nav mr-auto">
+            <li className="nav-item dark">
+            <Link to={"/Home"} className="nav-link dark">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/login"} className="nav-link">
+                Login
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/register"} className="nav-link ">
+                Register
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/EmployeeDashboard"} className="nav-link ">
+                Employee Dashboard
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/ReimbursementForm"} className="nav-link ">
+              Reimbursement Form
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/ManagerDashboard"} className="nav-link ">
+              Manager Dashboard
+              </Link>
+            </li>
+          </div>
+        </nav>
+        <Header/>
+        <div className="container mt-3">
           <Switch>
-            <Route path="/" exact={true}>
-              <NavigationToAllPages showError={updateErrorMessage} updateTitle={updateTitle}/>
-            </Route>
-            <Route path="/register">
-              <RegistrationForm showError={updateErrorMessage} updateTitle={updateTitle}/>
-            </Route>
-            <Route path="/login">
-              <LoginForm showError={updateErrorMessage} updateTitle={updateTitle}/>
-            </Route>
-            <Route path="/home">
-              <Home showError={updateErrorMessage} updateTitle={updateTitle}/>
-            </Route>
-            <Route path="/employee dashboard">
-              <EmployeeDashboard showError={updateErrorMessage} updateTitle={updateTitle}/>
-            </Route>
-            <Route path="/reimbursement form">
-              <ReimbursementForm showError={updateErrorMessage} updateTitle={updateTitle}/>
-            </Route>
-            <Route path="/manager dashboard">
-              <ManagerDashboard showError={updateErrorMessage} updateTitle={updateTitle}/>
-            </Route>
+          <Route exact path={"/home"} component={Home} />
+            <Route exact path={"/login"} component={LoginForm} />
+            <Route exact path={"/register"} component={RegistrationForm} />
+            <Route exact path={"/EmployeeDashboard"} component={EmployeeDashboard} />
+            <Route exact path={"/ReimbursementForm"} component={ReimbursementForm} />
+            <Route exact path={"/ManagerDashboard"} component={ManagerDashboard} />
+            <Route exact path={"/register"} component={RegistrationForm} />
           </Switch>
         </div>
-    </div>
-    </Router>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;

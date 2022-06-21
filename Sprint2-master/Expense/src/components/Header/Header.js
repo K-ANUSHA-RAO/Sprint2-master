@@ -10,7 +10,7 @@ function Header(props) {
         title = 'Expense Reimbursement System'
     }
     function renderLogout() {
-        if(props.location.pathname === '/home'||props.location.pathname === '/employee dashboard'||props.location.pathname === '/manager dashboard'){
+        if(props.location.pathname === '/home'||props.location.pathname === '/EmployeeDashboard'||props.location.pathname === '/ManagerDashboard'){
             return(
                 <div className="ml-auto">
                     <button className="btn btn-danger" onClick={() => handleLogout()}>Logout</button>
@@ -22,7 +22,7 @@ function Header(props) {
         props.history.push('/login');
     }
     return(
-        <nav className="navbar navbar-dark bg-dark">
+        <nav className="navbar navbar-dark bg-primary">
             <div className="row col-12 d-flex justify-content-center text-white">
                 <span className="h3">{props.title || title}</span>
                 {renderLogout()}

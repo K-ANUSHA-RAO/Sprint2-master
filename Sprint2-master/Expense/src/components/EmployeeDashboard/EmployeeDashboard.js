@@ -1,23 +1,41 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-function EmployeeDashboard(props) {
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";  
+import ReimbursementForm from '../ReimbursementForm/ReimbursementForm';
+class EmployeeDashboard extends React.Component {
+    render(){
     return(
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+       
+        <nav className="navbar navbar-expand navbar-dark bg-dark">
+            <div className="navbar-nav mr-auto">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="row col-12 d-flex collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href='/reimbursement form'>Reimbursement Form</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href='/View List'>View Reimbursement Status </a>
-                    </li>
-                </ul>
-            </div>
+            <li className="nav-item dark">
+            <Link to={"/ReimbursementForm"} className="nav-link dark">
+            Reimbursement Form
+              </Link>
+            </li>
+            <li className="nav-item ">
+              <Link to={"/ViewList"} className="nav-link">
+              View Reimbursement Status 
+              </Link>
+            </li>
+            
+                </div>
+                <div className="container mt-3">
+          <Switch>
+            <Route exact path={"/ReimbursementForm"} component={ReimbursementForm} />
+            <Route exact path={"/Reimbursementstatus"} component={""} />
+          </Switch>
+        </div>
         </nav>
-    )
+    );
+}
 }
 
-export default withRouter(EmployeeDashboard);
+export default EmployeeDashboard;

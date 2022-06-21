@@ -37,17 +37,17 @@ class App extends React.Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={"/EmployeeDashboard"} className="nav-link ">
+              <Link to={"/Employee Dashboard"} className="nav-link ">
                 Employee Dashboard
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={"/ReimbursementForm"} className="nav-link ">
+              <Link to={"/Reimbursement Form"} className="nav-link ">
               Reimbursement Form
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={"/ManagerDashboard"} className="nav-link ">
+              <Link to={"/Manager Dashboard"} className="nav-link ">
               Manager Dashboard
               </Link>
             </li>
@@ -59,10 +59,10 @@ class App extends React.Component {
           <Route exact path={"/home"} component={Home} />
             <Route exact path={"/login"} component={LoginForm} />
             <Route exact path={"/register"} component={RegistrationForm} />
-            <Route exact path={"/EmployeeDashboard"} component={EmployeeDashboard} />
-            <Route exact path={"/ReimbursementForm"} component={ReimbursementForm} />
-            <Route exact path={"/ManagerDashboard"} component={ManagerDashboard} />
-            <Route exact path={"/AcceptAndRejectRequests"} component={AcceptAndRejectRequests} />
+            <Route exact path={"/Employee Dashboard"} component={EmployeeDashboard} />
+            <Route exact path={"/Reimbursement Form"} component={ReimbursementForm} />
+            <Route exact path={"/Manager Dashboard"} component={ManagerDashboard} />
+            <Route exact path={"/Accept And Reject Requests"} component={AcceptAndRejectRequests} />
           </Switch>
         </div>
       </div>

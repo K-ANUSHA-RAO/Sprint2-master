@@ -12,7 +12,7 @@ function Header(props) {
         title = 'Expense Reimbursement System'
     }
     function renderLogout() {
-        if(props.location.pathname === '/home'||props.location.pathname === '/EmployeeDashboard'||props.location.pathname === '/ManagerDashboard'){
+        if(props.location.pathname === '/home'||props.location.pathname === '/Employee Dashboard'||props.location.pathname === '/Manager Dashboard'){
             return(
                 <div className="ml-auto">
                     <Button startIcon={<LogoutIcon />} color="secondary" variant="contained" onClick={() => handleLogout()}>

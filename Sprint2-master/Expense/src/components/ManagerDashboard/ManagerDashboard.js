@@ -22,7 +22,7 @@ class ManagerDashboard extends React.Component {
                   </Link>
                 </li>
                 <li className="nav-item ">
-                  <Link to={"/AcceptAndRejectRequests"} className="nav-link">
+                  <Link to={"/Accept And Reject Requests"} className="nav-link">
                   Accept And Reject Requests
                   </Link>
                 </li>

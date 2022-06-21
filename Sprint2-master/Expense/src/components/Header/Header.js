@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
+import Button from '@material-ui/core/Button';
+import LogoutIcon from '@material-ui/icons/ExitToApp';
 function Header(props) {
     const capitalize = (s) => {
         if (typeof s !== 'string') return ''
@@ -13,7 +15,9 @@ function Header(props) {
         if(props.location.pathname === '/home'||props.location.pathname === '/EmployeeDashboard'||props.location.pathname === '/ManagerDashboard'){
             return(
                 <div className="ml-auto">
-                    <button className="btn btn-danger" onClick={() => handleLogout()}>Logout</button>
+                    <Button startIcon={<LogoutIcon />} color="secondary" variant="contained" onClick={() => handleLogout()}>
+                     Logout
+                    </Button>
                 </div>
             )
         }

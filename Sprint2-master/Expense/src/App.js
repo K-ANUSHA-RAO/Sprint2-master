@@ -61,7 +61,6 @@ class App extends React.Component {
             <Route exact path={"/EmployeeDashboard"} component={EmployeeDashboard} />
             <Route exact path={"/ReimbursementForm"} component={ReimbursementForm} />
             <Route exact path={"/ManagerDashboard"} component={ManagerDashboard} />
-            <Route exact path={"/register"} component={RegistrationForm} />
           </Switch>
         </div>
       </div>

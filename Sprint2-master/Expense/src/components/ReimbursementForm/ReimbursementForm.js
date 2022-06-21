@@ -1,33 +1,90 @@
 import React, {useState} from 'react';
 import { withRouter } from 'react-router-dom';
-function ReimbursementForm(props) {
-    const [state , setState] = useState({
-        date : "",
-        description : "",
-        amount: "",
-        successMessage: null
-    })
-    const handleChange = (e) => {
-        const {id , value} = e.target   
-        setState(prevState => ({
-            ...prevState,
-            [id] : value
-        }))
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Switch, Route,Link} from "react-router-dom";
+class ReimbursementForm extends React.Component {
+    // const [state , setState] = useState({
+    //     date : "",
+    //     description : "",
+    //     amount: "",
+    //     successMessage: null
+    // })
+    // const handleChange = (e) => {
+    //     const {id , value} = e.target   
+    //     setState(prevState => ({
+    //         ...prevState,
+    //         [id] : value
+    //     }))
+    // }
+    // const handleSubmitClick = () => {
+    //     props.history.push('/employee dashboard');
+    // }
+    theme = createTheme();
+  constructor(props) {
+    super(props);
+    this.state = {
+      fields: {},
+      errors: {},
+      date:'',
+      description:'',
+      amount:''
+    };
+  }
+  handleValidation() {
+    let fields = this.state.fields;
+    let errors = {};
+    let formIsValid = true;
+    if (!fields["date"]) {
+        formIsValid = false;
+        errors["date"] = "Cannot be empty";
+      }
+    if (!fields["description"]) {
+        formIsValid = false;
+        errors["description"] = "Cannot be empty";
     }
-    const handleSubmitClick = () => {
-        props.history.push('/employee dashboard');
+    if (!fields["amount"]) {
+        formIsValid = false;
+        errors["amount"] = "Cannot be empty";
     }
+    this.setState({ errors: errors });
+    return formIsValid;
+  }
+
+  contactSubmit(e) {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    console.log({
+        date: data.get('date'),
+        description:data.get('description'),
+        amount: data.get('amount'),
+    });
+    if (this.handleValidation()) {
+      alert("Form submitted");
+    } else {
+      alert("Input values are invalid.");
+    }
+  }
+
+  handleChange(field, e) {
+    let fields = this.state.fields;
+    fields[field] = e.target.value;
+    this.setState({ fields });
+  }
+    render() {
     return(
+        <ThemeProvider theme={this.theme}>
         <div className="card col-14 col-lg-6 login-card mt-5 hv-center">
-            <form id="myForm">
+            <form component="form" name="contactform" className="contactform" noValidate onSubmit={this.contactSubmit.bind(this)}>
             <h1 className="form-group text-center text-uppercase mt-3 mb-5">Reimbursement Form</h1>
                 <div className="form-group text-left">
                         <label>Date</label>
                         <input type="date" 
                             className="form-control" 
                             id="date" 
-                            value={state.date}
-                            onChange={handleChange}
+                            name="date"
+                            refs="date"
+                            onChange={this.handleChange.bind(this, "date")}
+                            value={this.state.fields["date"]}
                             required
                         />
                 </div>
@@ -36,8 +93,10 @@ function ReimbursementForm(props) {
                     <textarea className="form-control" 
                         id="description" 
                         rows="3" 
-                        value={state.description}
-                        onChange={handleChange}
+                        name="description"
+                        refs="description"
+                        onChange={this.handleChange.bind(this, "description")}
+                        value={this.state.fields["description"]}
                         required>
                         </textarea>
                 </div>
@@ -47,22 +106,24 @@ function ReimbursementForm(props) {
                             className="form-control" 
                             id="amount" 
                             placeholder="Amount"
-                            value={state.amount}
-                            onChange={handleChange}
+                            name="amount"
+                            refs="amount"
+                            onChange={this.handleChange.bind(this, "amount")}
+                            value={this.state.fields["amount"]}
                             required
                         />
                 </div>
                 <button 
                     type="submit" 
                     className="btn btn-primary mr-2 mb-3"
-                    onClick={() => handleSubmitClick()}
                 >
                     Submit
                 </button>
 
             </form>
         </div>
+        </ThemeProvider>
     )
+    }
 }
-
-export default withRouter(ReimbursementForm);
+export default ReimbursementForm;

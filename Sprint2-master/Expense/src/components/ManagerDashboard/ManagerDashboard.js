@@ -20,7 +20,7 @@ class ManagerDashboard extends React.Component {
                 <div className="row col-24 d-flex collapse navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav mr-auto">
                 <li className="nav-item active" >
-                <Link to={"/ViewAllList"} className="nav-link dark">
+                <Link to={"/View All List"} className="nav-link dark">
                 View All forms
                   </Link>
                 </li>
@@ -35,7 +35,7 @@ class ManagerDashboard extends React.Component {
                     </div>
                     <div className="container mt-3">
               <Switch>
-                <Route exact path={"/ViewAllList"} component={""} />
+                <Route exact path={"/View All List"} component={"ViewAllList"} />
                 <Route exact path={"/AcceptAndRejectRequests"} component={AcceptAndRejectRequests} />
               </Switch>
             </div>

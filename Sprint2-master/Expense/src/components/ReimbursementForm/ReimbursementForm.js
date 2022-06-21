@@ -3,22 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Switch, Route,Link} from "react-router-dom";
 class ReimbursementForm extends React.Component {
-    // const [state , setState] = useState({
-    //     date : "",
-    //     description : "",
-    //     amount: "",
-    //     successMessage: null
-    // })
-    // const handleChange = (e) => {
-    //     const {id , value} = e.target   
-    //     setState(prevState => ({
-    //         ...prevState,
-    //         [id] : value
-    //     }))
-    // }
-    // const handleSubmitClick = () => {
-    //     props.history.push('/employee dashboard');
-    // }
     theme = createTheme();
   constructor(props) {
     super(props);
@@ -74,7 +58,7 @@ class ReimbursementForm extends React.Component {
     return(
         <ThemeProvider theme={this.theme}>
         <div className="card col-14 col-lg-6 login-card mt-5 hv-center">
-            <form component="form" name="contactform" className="contactform" noValidate onSubmit={this.contactSubmit.bind(this)}>
+            <form  name="contactform" className="contactform" noValidate onSubmit={this.contactSubmit.bind(this)}>
             <h1 className="form-group text-center text-uppercase mt-3 mb-5">Reimbursement Form</h1>
                 <div className="form-group text-left">
                         <label>Date</label>
@@ -88,7 +72,7 @@ class ReimbursementForm extends React.Component {
                             required
                         />
                 </div>
-                <div className="form-group text-left purple-border">
+                <div className="form-group text-left">
                     <label>Description</label>
                     <textarea className="form-control" 
                         id="description" 

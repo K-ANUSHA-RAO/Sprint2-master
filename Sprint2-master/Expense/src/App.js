@@ -15,12 +15,14 @@ import EmployeeDashboard from './components/EmployeeDashboard/EmployeeDashboard'
 import ReimbursementForm from './components/ReimbursementForm/ReimbursementForm';
 import ManagerDashboard from './components/ManagerDashboard/ManagerDashboard';
 import AcceptAndRejectRequests from './components/AcceptAndRejectRequests/AcceptAndRejectRequests';
+import ViewAllList from './components/ViewAllList/ViewAllList';
 class App extends React.Component {
   render() {
     return (
       <div>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <div className="navbar-nav mr-auto">
+          <a class="navbar-brand" href="#">Expense Reimbursement System</a>
             <li className="nav-item dark">
             <Link to={"/Home"} className="nav-link dark">
                 Home
@@ -63,6 +65,7 @@ class App extends React.Component {
             <Route exact path={"/Reimbursement Form"} component={ReimbursementForm} />
             <Route exact path={"/Manager Dashboard"} component={ManagerDashboard} />
             <Route exact path={"/Accept And Reject Requests"} component={AcceptAndRejectRequests} />
+            <Route exact path={"/View All List"} component={ViewAllList} />
           </Switch>
         </div>
       </div>

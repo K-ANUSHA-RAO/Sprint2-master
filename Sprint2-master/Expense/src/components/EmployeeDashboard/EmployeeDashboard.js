@@ -9,7 +9,6 @@ import ReimbursementForm from '../ReimbursementForm/ReimbursementForm';
 class EmployeeDashboard extends React.Component {
     render(){
     return(
-       
         <nav className="navbar navbar-expand-sm navbar-light bg-light">
           <div className='container'>
             <div className="navbar-nav mr-auto">

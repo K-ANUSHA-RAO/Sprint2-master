@@ -5,6 +5,7 @@ import {
     Route,
     Link
   } from "react-router-dom";
+import AcceptAndRejectRequests from '../AcceptAndRejectRequests/AcceptAndRejectRequests';
 
 class ManagerDashboard extends React.Component {
     render(){
@@ -30,7 +31,7 @@ class ManagerDashboard extends React.Component {
                     <div className="container mt-3">
               <Switch>
                 <Route exact path={"/ViewAllList"} component={""} />
-                <Route exact path={"/AcceptAndRejectRequests"} component={""} />
+                <Route exact path={"/AcceptAndRejectRequests"} component={AcceptAndRejectRequests} />
               </Switch>
             </div>
             </nav>

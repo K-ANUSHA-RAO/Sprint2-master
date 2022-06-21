@@ -14,6 +14,7 @@ import {
 import EmployeeDashboard from './components/EmployeeDashboard/EmployeeDashboard';
 import ReimbursementForm from './components/ReimbursementForm/ReimbursementForm';
 import ManagerDashboard from './components/ManagerDashboard/ManagerDashboard';
+import AcceptAndRejectRequests from './components/AcceptAndRejectRequests/AcceptAndRejectRequests';
 class App extends React.Component {
   render() {
     return (
@@ -61,6 +62,7 @@ class App extends React.Component {
             <Route exact path={"/EmployeeDashboard"} component={EmployeeDashboard} />
             <Route exact path={"/ReimbursementForm"} component={ReimbursementForm} />
             <Route exact path={"/ManagerDashboard"} component={ManagerDashboard} />
+            <Route exact path={"/AcceptAndRejectRequests"} component={AcceptAndRejectRequests} />
           </Switch>
         </div>
       </div>
